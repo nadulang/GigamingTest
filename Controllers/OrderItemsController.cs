@@ -59,7 +59,7 @@ namespace nadya_asp_rest_test1.Controllers
             {
                 order_id = 3,
                 product_id = 2,
-                quantity = 5
+                quantity = 4
 
             };
 
