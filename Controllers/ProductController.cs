@@ -11,7 +11,7 @@ using nadya_asp_rest_test1.Models;
 namespace nadya_asp_rest_test1.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/Product")]
     public class ProductController : ControllerBase
     {
         private readonly ILogger<ProductController> _logger;

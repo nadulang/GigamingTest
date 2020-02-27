@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.JsonPatch;
 namespace nadya_asp_rest_test1.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/Customer")]
     public class CustomerController : ControllerBase
     {
         private readonly ILogger<CustomerController> _logger;

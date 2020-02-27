@@ -11,7 +11,7 @@ using nadya_asp_rest_test1.Models;
 namespace nadya_asp_rest_test1.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/Driver")]
     public class DriverController : ControllerBase
     {
         private readonly ILogger<DriverController> _logger;
