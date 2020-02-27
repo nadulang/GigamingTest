@@ -54,21 +54,21 @@ namespace nadya_asp_rest_test1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(DateTime created_at, DateTime updated_at)
+        public IActionResult Post(Customer customers)
         {
-            var res = new Customer
-            {
-                Full_name = "Jenna", 
-                Username = "goe",
-                Email = "jenna@ofe.com",
-                Phone_Number = "098653456",
-                created_at = DateTime.Now,
-                updated_at = DateTime.Now
-            };
+            // var res = new Customer
+            // {
+            //     Full_name = "Jenna", 
+            //     Username = "goe",
+            //     Email = "jenna@ofe.com",
+            //     Phone_Number = "098653456",
+            //     created_at = DateTime.Now,
+            //     updated_at = DateTime.Now
+            // };
 
-            _context.Customers.Add(res);
+             _context.Customers.Add(customers);
             _context.SaveChanges();
-            return Ok(new {message = "success retrieve data", status = true, data = res});
+            return Ok(new {message = "success retrieve data", status = true, data = customers});
         }
 
         [HttpDelete("{id}")]

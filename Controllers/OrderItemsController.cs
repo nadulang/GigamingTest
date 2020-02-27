@@ -53,19 +53,19 @@ namespace nadya_asp_rest_test1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post(OrderItems orderItems)
         {
-            var tu = new OrderItems
-            {
-                order_id = 3,
-                product_id = 2,
-                quantity = 4
+            // var tu = new OrderItems
+            // {
+            //     order_id = 3,
+            //     product_id = 2,
+            //     quantity = 4
 
-            };
+            // };
 
-            _context.OrderItems.Add(tu);
+            _context.OrderItems.Add(orderItems);
             _context.SaveChanges();
-            return Ok(new {message = "success retrieve data", status = true, data = tu});
+            return Ok(new {message = "success retrieve data", status = true, data = orderItems});
         }
 
         [HttpDelete("{id}")]

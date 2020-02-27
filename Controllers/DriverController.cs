@@ -50,19 +50,19 @@ namespace nadya_asp_rest_test1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(DateTime created_at, DateTime updated_at)
+        public IActionResult Post(Driver drivers)
         {
-            var dro = new Driver
-            {
-                full_name = "donna", 
-                phone_number = "0812765676",
-                created_at = DateTime.Now,
-                updated_at = DateTime.Now
-            };
+            // var dro = new Driver
+            // {
+            //     full_name = "donna", 
+            //     phone_number = "0812765676",
+            //     created_at = DateTime.Now,
+            //     updated_at = DateTime.Now
+            // };
 
-            _context.Drivers.Add(dro);
+            _context.Drivers.Add(drivers);
             _context.SaveChanges();
-            return Ok(new {message = "success retrieve data", status = true, data =dro});
+            return Ok(new {message = "success retrieve data", status = true, data =drivers});
         }
 
         [HttpDelete("{id}")]

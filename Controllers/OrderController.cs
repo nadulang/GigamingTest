@@ -50,19 +50,19 @@ namespace nadya_asp_rest_test1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(DateTime created_at, DateTime updated_at)
+        public IActionResult Post(Order orders)
         {
-            var res = new Order
-            {
-                user_id = 1,
-                driver_id = 2,
-                created_at = DateTime.Now,
-                updated_at = DateTime.Now
-            };
+            // var res = new Order
+            // {
+            //     user_id = 1,
+            //     driver_id = 2,
+            //     created_at = DateTime.Now,
+            //     updated_at = DateTime.Now
+            // };
 
-            _context.Orders.Add(res);
+            _context.Orders.Add(orders);
             _context.SaveChanges();
-            return Ok(new {message = "success retrieve data", status = true, data = res});
+            return Ok(new {message = "success retrieve data", status = true, data = orders});
         }
 
         [HttpDelete("{id}")]

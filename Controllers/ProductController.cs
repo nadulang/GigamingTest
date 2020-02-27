@@ -51,19 +51,19 @@ namespace nadya_asp_rest_test1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(DateTime created_at, DateTime updated_at)
+        public IActionResult Post(Product products)
         {
-            var res = new Product
-            {
-                name = "apple", 
-                price = 100000, 
-                created_at = DateTime.Now,
-                updated_at = DateTime.Now
-            };
+            // var res = new Product
+            // {
+            //     name = "apple", 
+            //     price = 100000, 
+            //     created_at = DateTime.Now,
+            //     updated_at = DateTime.Now
+            // };
 
-            _context.Products.Add(res);
+            _context.Products.Add(products);
             _context.SaveChanges();
-            return Ok(res);
+            return Ok(new {message = "success retrieve data", status = true, data = products});
         }
 
         [HttpDelete("{id}")]
