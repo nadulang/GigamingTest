@@ -27,7 +27,7 @@ namespace nadya_asp_rest_test1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CustomerContext>(options => options.UseNpgsql("Host=127.0.0.1;Username=postgres;Password=docker;Database="));
+            services.AddDbContext<CustomerContext>(options => options.UseNpgsql("Host=ec2-50-17-178-87.compute-1.amazonaws.com;Username=nwvprjtwaiebxb;Password=a00fce9c512658b97e4fd8c90056e6f1e0f83e2bbf935211cdc663706864535b;Database=dagcnjmb9bpdfo;SSL Mode=Require;Trust Server Certificate=true"));
             services.AddControllers();
         }
 
